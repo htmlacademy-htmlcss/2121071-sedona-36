@@ -50,13 +50,33 @@ body {
   align-items: center;
 }
 
+.logo-header {
+  position: relative;
+  margin-top: -11px;
+  top: 6px;
+  left: 10px;
+}
+
 .navigation-list {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  padding: 0;
+  border: 0;
   list-style-type: none;
   align-items: center;
+  cursor: pointer;
+}
+
+.navigation-user .navigation-item:nth-child(1) .navigation-link {
+  background-image: url("../images/search-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navigation-user .navigation-item:nth-child(2) .navigation-link {
+  background-image: url("../images/heart-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .page-header {
@@ -162,11 +182,21 @@ body {
 }
 
 .advantages-title {
+  position: relative;
   font-weight: 700;
   font-size: 24px;
   line-height: 22px;
   text-transform: uppercase;
+}
 
+.advantages-title::before {
+  position: absolute;
+  bottom: -18px;
+  left: 85px;
+  width: 60px;
+  height: 2px;
+  background-color: #0000004D;
+  content: "";
 }
 
 .blue-background {
@@ -291,7 +321,35 @@ body {
   height: 415px;
 }
 
+.newsletter-form {
+  display: flex;
+  margin: 0 auto;
+  max-width: 687px;
+  padding: 0;
+  min-height: 52px;
+}
+
+.field {
+  flex-grow: 1;
+  margin: 0;
+  border: 0;
+  width: 452px;
+  background-color: #F2F2F2;
+  min-height: 52px;
+  padding: 0;
+}
+
+.input-price {
+  display: flex;
+  width: 143px;
+}
+
+.input-price-1 {
+  margin-left: 2px;
+}
+
 .button-email {
+  bottom: 1px;
   box-sizing: border-box;
   font-size: 20px;
   line-height: 36px;
@@ -302,9 +360,10 @@ body {
   text-decoration: none;
   min-width: 232px;
   min-height: 52px;
-  border-radius: 4px;
+  border-radius: 0 4px 4px 0;
   border: 0;
   padding: 8px 50px;
+  margin: 0;
 }
 
 .page-footer-container {
@@ -358,6 +417,60 @@ body {
   overflow: hidden;
 }
 
+/* Модальное окно */
+
+.modal-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F2F2F2CC;
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 40px;
+  background-color: #ffffff;
+}
+
+.searching-hotel {
+  width: 717px;
+}
+
+.modal-close-button {
+  position: absolute;
+  padding: 0;
+  top: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  background-color: #ffffff;
+  border: none;
+  background-image: url("../images/close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.modal-title {
+  grid-row: 1/5;
+  margin: 0;
+  margin-bottom: 64px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.modal-field {
+  position: absolute;
+}
+
 /* Каталог */
 
 .catalog-hotels {
@@ -372,8 +485,7 @@ body {
   text-align: center;
   background-size: cover;
   color: #ffffff;
-  /* width: 1200px;
-  height: 405px; */
+  padding: 35px 70px 70px 70px;
 }
 
 .catalog-hotels {
@@ -383,12 +495,13 @@ body {
 }
 
 .breadcrumbs {
+  padding: 0;
+  margin-top: 8px;
   width: 114px;
   min-height: 21px;
   display: flex;
   justify-content: space-between;
   list-style-type: none;
-  padding-left: 70px;
 }
 
 .catalog-filter {
@@ -397,45 +510,50 @@ body {
 }
 
 .catalog-filter-group {
+  padding: 0;
   text-align: left;
-  min-width: 150px;
-  min-height: 157px;
+  min-width: 200px;
+  min-height: 48px;
   border: 0;
 }
 
 .catalog-filter-list {
+  padding: 0;
+  margin: 0;
   list-style-type: none;
 }
 
-.catalog-filter-group {
-  display: flex;
-  padding-left: 70px;
-  padding-right: 70px;
+.inner-header{
+  margin: ;
 }
 
 .inner-header-title {
+  margin-top: 35px;
+  margin-bottom: 270px;
   text-align: left;
   font-size: 60px;
   line-height: 78px;
   color: #ffffff;
-  padding-left: 70px;
-}
-
-.breadcrumbs-link {
-  font-size: 16px;
-  line-height: 21px;
-  margin-right: 10px;
+  margin: 0;
 }
 
 .catalog-filter-title {
+  display: inline;
+  padding: 0;
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
-}
+  }
+
+  .catalog-filter-item {
+  padding: 0;
+  margin: 0;
+ }
 
 .buttons {
   display: flex;
   flex-direction: column;
+  padding: 0;
 }
 
 .catalog-filter-item {
@@ -491,19 +609,72 @@ body {
 
 .sorting-container {
   display: flex;
+  margin: 0;
+  padding: 0;
   margin-bottom: 40px;
+  margin-top: 50px;
+}
+
+.button-view {
+  min-width: 160px;
+  min-height: 48px;
+}
+
+.icon-view {
+  display: flex;
+  list-style: none;
+}
+
+.button-view-all {
+  background-image: url("../images/catalog_images/icon-view-all.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 48px;
+  height: 48px;
+  display: block;
+  border-radius: 4px;
+}
+
+.button-view-big {
+  background-image: url("../images/catalog_images/icon-view-big.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 48px;
+  height: 48px;
+  display: block;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.button-view-note {
+  background-image: url("../images/catalog_images/icon-view-note.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 48px;
+  height: 48px;
+  display: block;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.select-control {
+  min-width: 292px;
+  height: 49px;
+  border-radius: 4px;
+  align-self: center;
 }
 
 .hotels-cards {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
+  padding: 0;
 }
 
 .hotel-card {
+  margin: 20px;
   min-width: 300px;
   min-height: 438px;
-  margin: 20px;
 }
 
 .hotels-prices {
@@ -514,6 +685,10 @@ body {
 .buttons-hotels {
   display: flex;
   justify-content: space-between;
+}
+
+.stars {
+  padding-top: 5px;
 }
 
 .rate {
@@ -606,8 +781,6 @@ body {
 
 .pagination-container {
   display: flex;
-  padding-left: 70px;
-  padding-right: 70px;
 }
 
 .pagination {
@@ -620,6 +793,19 @@ body {
 .amara-resort {
   max-width: 340px;
   flex-basis: 340px;
+}
+
+.dots {
+  display: block;
+  box-sizing: border-box;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 36px;
+  text-decoration: none;
+  text-align: center;
+  min-width: 60px;
+  height: 60px;
+  margin-right: 8px;
 }
 
 .pagination-link {
@@ -647,6 +833,8 @@ body {
 .mail-box-catalog {
   background-position: center;
   text-align: center;
+  padding-top: 96px;
+  padding-bottom: 104px;
 }
 
 .mailing-list {
